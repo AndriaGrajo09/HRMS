@@ -16,9 +16,15 @@ if (!isset($_SESSION["user"])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Dashboard</h1>
-        <a href="logout.php" class="btn btn-warning">Logout</a>
+    <div class="wrapper">
+        <header>
+        <div class="container">
+            <h1>Welcome to Dashboard</h1>
+            <a href="logout.php" class="btn btn-warning">Logout</a>
+        </div>
+            
+        </header>
     </div>
+    
 </body>
 </html>

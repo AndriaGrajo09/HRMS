@@ -1,12 +1,19 @@
 body{
     padding: 50px;
 }
+
 .container{
-    max-width: 600px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 50px;
+    padding: 750px;
     box-shadow:rgba(red, green, blue, alpha) (100, 100, 111, 0.2) 0px 2px 29px 0px;
 }
 .form group{
     margin-bottom: 30px;
+}
+
+.wrapper{
+    height: 750px;
+    width: 1500px;
+    background-color: red;
 }
