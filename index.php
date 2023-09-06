@@ -18,10 +18,10 @@ if (!isset($_SESSION["user"])) {
 <body>
     <div class="wrapper">
         <header>
-        <div class="container">
-            <h1>Welcome to Dashboard</h1>
-            <a href="logout.php" class="btn btn-warning">Logout</a>
-        </div>
+            <div class="container">
+                <h1>HUMAN RESOURCE MANAGEMENT SYSTEM</h1>
+                <a href="logout.php" class="btn btn-warning">Logout</a>
+             </div>
             
         </header>
     </div>

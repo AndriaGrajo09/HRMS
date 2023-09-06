@@ -16,6 +16,9 @@ if (isset($_SESSION["user"])) {
 </head>
 <body>
     <div class="container">
+            <div class="container-registration">
+                <h1>HUMAN RESOURCE MANAGEMENT SYSTEM</h1>
+            </div>
         <?php
         if (isset($_POST["submit"])) {
             $fullname = $_POST["fullname"];
