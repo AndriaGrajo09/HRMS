@@ -1,9 +1,10 @@
 <?php
 session_start();
 if (isset($_SESSION["user"])) {
-    header("Location: index.php");
+    header("Location: login.php");
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +19,30 @@ if (isset($_SESSION["user"])) {
     <div class="container">
             <div class="container-registration">
                 <h1>HUMAN RESOURCE MANAGEMENT SYSTEM</h1>
+            </div>
+            <div class="log_img">
+                <style>
+                     body{
+                    margin: 0;
+                    padding: 0;
+                    background-image: url("images/4.jpg");
+                    background-size: cover;
+                    background-position: center center;
+                    min-height: 100vh;
+                    display: -webkit-box;
+                     } 
+                     .h1, h1 {
+                        font-size: calc(1.375rem + 1.5vw);
+                        font-style: normal;
+                        font-family: serif;
+                        text-align: center;
+                        text-emphasis: inherit;
+                        text-shadow: 0 0 black;
+                        padding-top: 300px;
+                        margin-top: -200px;
+                       }
+
+                </style>
             </div>
         <?php
         if (isset($_POST["submit"])) {
@@ -63,31 +88,37 @@ if (isset($_SESSION["user"])) {
                    mysqli_stmt_bind_param($stmt,"sss",$fullname, $email, $passwordHash);
                    mysqli_stmt_execute($stmt);
                    echo "<div class = 'alert alert-success'>You are registered successfully!</div>";
+                   session_start();
+                    $_SESSION["user"] = "yes";
+                    header("Location: login.php");
+                    die();
                 } else {
                     die("Something went wrong.");
                 }
             }
         }
         
-        ?>  
+    ?>  
+       
+            
             <form action="registration.php" method="post">
+          
                 <div class="form group">
-                    <input type="text" class="form-control" name="fullname" placeholder="Full Name: ">
-                </div>
-                <div class="form group">
-                    <input type="email" class="form-control" name="email" placeholder="Email: ">
-                </div>
-                <div class="form group">
-                    <input type="password" class="form-control" name="password" placeholder="Password: ">
-                </div>
-                <div class="form group">
-                    <input type="text" class="form-control" name="repeat_password" placeholder="Input Password: ">
+                    <br><br>
+                    <input style = "width: 300px; height:35px; border-radius: 10px;"type="text"  name="fullname" placeholder="Full Name: ">
+                    <br><br>
+                    <input style = "width: 300px; height:35px; border-radius: 10px;"type="email" name="email" placeholder="Email: ">
+                    <br><br>
+                    <input style = "width: 300px; height:35px; border-radius: 10px;"type="password" name="password" placeholder="Password: ">
+                    <br><br>
+                    <input style = "width: 300px; height:35px; border-radius: 10px;"type="text"  name="repeat_password" placeholder="Input Password: ">
+                    <br><br>
                 </div>
                 <div class="form-btn">
-                    <input type="submit" class="btn btn-primary" value="Register" name="submit" >
+                    <input class="btn btn-primary" type="submit" name="Register" value="Register" style="color: black; width: 80px; height: 35px;">
                 </div>
             </form>
-            <div><P>Already Registered? <a href="login.php">Login here</a></P></div>
+            <div><P style = "font-weight: 900; font-size: larger; color:black;">Already Registered? <a href="login.php">Login here</a></P></div>
     </div>
 </body>
 </html>
