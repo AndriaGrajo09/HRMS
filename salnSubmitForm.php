@@ -9,8 +9,7 @@
 </head>
 <body>
     <h1>SALN</h1>
-        <div class = "sidebar">
-        <style>
+    <style>
             h1 {
                 text-align: left;
                 padding-bottom: 1000px;
@@ -40,16 +39,29 @@
                 left: 0;
                 height: 150px;
                 border-radius: 50%;
-                padding-top: 10px;
+                padding-top: 20px;
                 padding-left: 45px;
+                margin-top: 25px;
             }
-
-
+            p1{
+                text-align: center;
+                padding-bottom: 1000px;
+                padding-left: 0px;
+                margin-left: 35px;
+                margin-top: 10px;
+                position: fixed;
+                display: block;
+                font-family: serif;
+                top: 0px;
+                left: 0px;
+                font-size: 15px;
+            }
         </style>
-            <br><br><br><br><br>
-            <img src="images/2.png" alt=""><br>
-            <a href="Department.php">Department</a>
-            <a href="Designation.php">Designation</a>
+        <div class="sidebar">
+            <br><br><p1>HUMAN RESOURCE <br>MANAGEMENT SYSTEM</p1><br><br><br>
+            <img src="images/2.png" alt=""><br> <br>
+            <a href="employeeDashboard.php">Dashboard</a>
+            <a href="EmployeeProfile.php">My Profile</a>
             <a href="Leave.php">Leave</a>
             <a href="Evaluation.php">Evaluation</a>
             <a href="Resignation.php">Resignation</a>

@@ -9,9 +9,16 @@
 </head>
 <body>
     <header>
-        <h1>Evaluation</h1>
+        <h1>My Profile</h1>
     </header>
     <style>
+            .header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            }
+
             h1 {
                 text-align: left;
                 padding-bottom: 1000px;
@@ -58,19 +65,40 @@
                 left: 0px;
                 font-size: 15px;
             }
+            p1{
+                text-align: center;
+                padding-bottom: 1000px;
+                padding-left: 0px;
+                margin-left: 35px;
+                margin-top: 10px;
+                position: fixed;
+                display: block;
+                font-family: serif;
+                top: 0px;
+                left: 0px;
+                font-size: 15px;
+            }
+            .profile {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;}
 
 
         </style>
         <div class = "sidebar">
-            <br><br><p>HUMAN RESOURCE <br>MANAGEMENT SYSTEM</p><br><br><br>
+            <br><br><p1>HUMAN RESOURCE <br>MANAGEMENT SYSTEM</p1><br><br><br>
             <img src="images/2.png" alt=""><br><br>
             <a href="employeeDashboard.php">Dashboard</a>
-            <a href="MyProfile.php">My Profile</a>
             <a href="Leave.php">Leave</a>
+            <a href="Evaluation.php">Evaluation</a>
             <a href="Resignation.php">Resignation</a>
             <a href="Promotion.php">Promotion</a>
             <a href="SALN.php">SALN</a>
             <a href="logout.php">Logout</a>
         </div>
+       
+
+
 </body>
 </html>

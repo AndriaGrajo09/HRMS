@@ -41,23 +41,37 @@
                 left: 0;
                 height: 150px;
                 border-radius: 50%;
-                padding-top: 10px;
+                padding-top: 20px;
                 padding-left: 45px;
+                margin-top: 25px;
+            }
+            p1{
+                text-align: center;
+                padding-bottom: 1000px;
+                padding-left: 0px;
+                margin-left: 35px;
+                margin-top: 10px;
+                position: fixed;
+                display: block;
+                font-family: serif;
+                top: 0px;
+                left: 0px;
+                font-size: 15px;
             }
 
-
-        </style>
+    </style>
         <div class = "sidebar">
-            <br><br><br><br><br>
-            <img src="images/2.png" alt=""><br>
-            <a href="Department.php">Department</a>
-            <a href="Designation.php">Designation</a>
+            <br><br><p1>HUMAN RESOURCE <br>MANAGEMENT SYSTEM</p1><br><br><br>
+            <img src="images/2.png" alt=""><br><br>
+            <a href="employeeDashboard.php">Dashboard</a>
+            <a href="EmployeeProfile.php">My Profile</a>
             <a href="Leave.php">Leave</a>
             <a href="Evaluation.php">Evaluation</a>
             <a href="Promotion.php">Promotion</a>
             <a href="SALN.php">SALN</a>
             <a href="logout.php">Logout</a>
         </div>
+
 
         <h2>Resignation Form</h2>
 
