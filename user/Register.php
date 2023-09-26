@@ -1,28 +1,40 @@
 <?php
 require_once 'database.php';
-if(isset($_POST["Register"])){
+
+if (isset($_POST["Register"])) {
     $full_name = $_POST["full_name"];
     $email = $_POST["email"];
     $password = $_POST["password"];
     $passwordRepeat = $_POST["repeat_password"];
     $user_type = $_POST["user_type"];
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-    $duplicate = mysqli_query($conn, "SELECT * FROM `users` WHERE full_name = '$full_name' or email = '$email' ");
 
-    if (mysqli_num_rows($duplicate) > 0){
-        echo "<script>alert('Username or Email has already taken'); </script> ";
-    } else{
-        if($password == $passwordRepeat){
-            $query = " INSERT INTO users VALUES('', '$full_name', '$email', '$password', '$user_type' )";
-            mysqli_query($conn, $query);
-            echo "<script>alert('Registration successful'); </script> ";
-        }
-        else{
-            echo "<script>alert('Password does not match'); </script> ";
+    // Check for duplicate username or email
+    $duplicate = mysqli_query($conn, "SELECT * FROM `users` WHERE full_name = '$full_name' OR email = '$email' ");
+
+    if (mysqli_num_rows($duplicate) > 0) {
+        echo "<script>alert('Username or Email has already been taken');</script>";
+    } else {
+        if ($password == $passwordRepeat) {
+            // Use prepared statement to insert user data
+            $query = "INSERT INTO users (full_name, email, password, user_type) VALUES (?, ?, ?, ?)";
+            $stmt = $conn->prepare($query);
+            if ($stmt) {
+                $stmt->bind_param("ssss", $full_name, $email, $passwordHash, $user_type);
+                if ($stmt->execute()) {
+                    echo "<script>alert('Registration successful');</script>";
+                } else {
+                    echo "<script>alert('Registration failed');</script>";
+                }
+                $stmt->close();
+            } else {
+                echo "<script>alert('Prepare statement failed');</script>";
+            }
+        } else {
+            echo "<script>alert('Password does not match');</script>";
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -74,12 +86,13 @@ if(isset($_POST["Register"])){
                     <br><br>
                     <input style = "width: 300px; height:35px; border-radius: 10px;"type="password" name="password" placeholder="Password: " required = "">
                     <br><br>
-                    <input style = "width: 300px; height:35px; border-radius: 10px;"type="text"  name="repeat_password" placeholder="Input Password: " required = "">
+                    <input style = "width: 300px; height:35px; border-radius: 10px;"type="text"  name="repeat_password" placeholder="Repeat Password: " required = "">
                     <br><br>
                     <select style = "width: 300px; height:35px; border-radius: 10px;" name="user_type"> Select user type
                         <option style = "width: 300px; height:35px; border-radius: 10px;" value="user">User</option>
                         <option style = "width: 300px; height:35px; border-radius: 10px;" value="admin">Admin</option>
                     </select>
+                    <br><br>
                 </div>
                 <div class="form-btn">
                     <input class="btn btn-primary" type="submit" name="Register" value="Register" style="color: black; width: 80px; height: 35px;">

@@ -78,7 +78,7 @@
                 </style>
                 <br><br>
                 <input style = "width: 300px; height:35px; border-radius: 10px;"type="email" placeholder="Enter Email: " name="email" required = ""><br><br>
-                <input style = "width: 300px; height:35px; border-radius: 10px;"type="password" placeholder="Enter Password: " name="password" required = "">
+                <input style = "width: 300px; height:35px; border-radius: 10px;"type="password" placeholder="Enter Password: " name="password" required = ""> <br><br>
             <div class="form-btn">
                 <input class="btn btn-primary" type="submit" name="login" value="Login" style="color: black; width: 80px; height: 35px">
             </div>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,8 +58,6 @@
                 left: 0px;
                 font-size: 15px;
             }
-
-
     </style>
         <div class = "sidebar">
             <br><br><p1>HUMAN RESOURCE <br>MANAGEMENT SYSTEM</p1><br><br><br>
@@ -100,9 +97,7 @@
                     <div class="form-btn">
                         <input class="btn btn-primary" type="submit" name="Submit" value="Submit" style="color: black; width: 80px; height: 35px;">
                     </div>
-
             </form>
-        </div>
-        
+        </div>      
 </body>
 </html>

@@ -83,6 +83,7 @@
         <input type="text" id="employee_name" name="employee_name" required>
         <br><br>
 
+        <a href="https://www.miaa.gov.ph/images/stories/downloads2/saln-form-2021.pdf" download>Download SALN FORM</a> <br><br>
         <label for="attachment">Upload SALN File:</label>
         <input type="file" id="attachment" name="attachment" required>
         <br><br>
